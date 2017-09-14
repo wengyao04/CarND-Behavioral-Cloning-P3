@@ -90,8 +90,7 @@ def train(model, df_train, df_val):
 def main():
     df_collect_0 = pd.read_csv('./data_collect_0/driving_log.csv')
     df_collect_1 = pd.read_csv('./data_collect_1/driving_log.csv')
-    df_collect_2 = pd.read_csv('./data_collect_2/driving_log.csv')
-    frames = [df_collect_0, df_collect_1, df_collect_2]
+    frames = [df_collect_0, df_collect_1]
     df = pd.concat(frames)
     df_train, df_val = train_test_split(df, test_size=0.2)
 
