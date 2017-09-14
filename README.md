@@ -2,9 +2,12 @@
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-#### Model Architecture
+#### Data collection and Exploration
 
-I use 4 convoluted layers with 64, 96, and 128 filters respectively, and each of which is followed by a maximum pooling with keep probability of 0.8. 
+<img src="./images/train_test_angle.jpg" width="520"/>
+
+#### Model Architecture
+I use three convoluted layers with 64, 96, and 128 filters respectively, and each of which is followed by a maximum pooling with keep probability of 0.8. The last conv2D layer is flattened and followed by three fully connected layers of size 128, 64 and 1 with keep prbability of 0.7, 0.7 and 1 respectively. Dropout is used to avoid overfitting.
 
 |               | input size    | kernel size | filters | keep probability |
 | ------------  |:-------------:|:-----------:|:-------:|:----------------:|
@@ -16,5 +19,8 @@ I use 4 convoluted layers with 64, 96, and 128 filters respectively, and each of
 |  full connect | 64            |             |         |      0.7         |
 |  full connect | 1             |             |         |      1           |
 
-[gif1]: ./run1.gif 
+
+#### Model Training
+
+The model is trained to predict the steering angle, loss function is MSE (Mean Squared Error) = sum (f_i - y_i)^2 / N where N is he number of samples and f_i is the estimation of y_i. I minimize MSE using AdamOptimizer with learning rate of 5e-5 in 150 epochs. 
 
