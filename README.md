@@ -16,4 +16,5 @@ I use 4 convoluted layers with 64, 96, and 128 filters respectively, and each of
 |  full connect | 64            |             |         |      0.7         |
 |  full connect | 1             |             |         |      1           |
 
+[gif1]: ./run1.gif 
 
