@@ -3,7 +3,7 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 #### Data collection and Exploration
-
+The cameras in the simulator capture images of 160 x 320 x 3. I drive car in both clock-wise and counter-clockwise to combat the bias towards left turns. The following plots show the distributions of steering angles of training and testing dataset.
 <img src="./images/train_test_angle.jpg" width="520"/>
 
 <img src="./images/image_flip.jpg" width="520"/>
@@ -13,7 +13,7 @@ I use three convoluted layers with 64, 96, and 128 filters respectively, and eac
 
 |               | input size    | kernel size | filters | keep probability |
 | ------------  |:-------------:|:-----------:|:-------:|:----------------:|
-|    conv2D     | 160 x 320 x 1 |    5 x 5    |    64   |      0.8         |
+|    conv2D     | 160 x 320 x 3 |    5 x 5    |    64   |      0.8         |
 |    conv2D     | 5 x 5 x 128   |    3 x 3    |    96   |      0.8         |
 |    conv2D     | 3 x 3 x 128   |    3 x 3    |   128   |      0.8         |
 |  full connect | flatten       |             |         |      1           |
