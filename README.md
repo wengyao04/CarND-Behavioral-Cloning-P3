@@ -26,5 +26,7 @@ I use three convoluted layers with 64, 96, and 128 filters respectively, and eac
 #### Model Training
 The model is trained to predict the steering angle, loss function is MSE (Mean Squared Error) = sum (f_i - y_i)^2 / N, where N is number of samples and f_i is the estimation of y_i. I minimize MSE using AdamOptimizer with learning rate of 5e-5 in 150 epochs. The loss of training and validation  in 150 epochs.
 
-<img src="./images/loss.jpg" width="350"/>
+ Loss function             | Auto Driving
+:-------------------------:|:-------------------------:
+<img src="./images/loss.jpg" width="350"/> | <img src="./images/run1.gif" width="350"/>
 
