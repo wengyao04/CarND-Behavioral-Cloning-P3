@@ -6,6 +6,7 @@
 The cameras in the simulator capture images of 160 x 320 x 3. I drive car in both clock-wise and counter-clockwise to combat the bias towards left turns. The following plots show the distributions of steering angles of training and testing dataset.
 <img src="./images/train_test_angle.jpg" width="520"/>
 
+There are three cameras on the vehicle, I use images taken by all of them, but correcting the steering agnle by 0.2 for image taken by left cameras and -0.2 for right cameras. I also randomly flip the images
 <img src="./images/image_flip.jpg" width="520"/>
 
 #### Model Architecture
