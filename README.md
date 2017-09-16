@@ -10,7 +10,7 @@ There are three cameras on the vehicle, I use images taken by all of them, but c
 <img src="./images/image_flip.jpg" width="620"/>
 
 #### Model Architecture
-I use three convoluted layers with 64, 96, and 128 filters respectively, and each of which is followed by a maximum pooling with keep probability of 0.8. The last conv2D layer is flattened and followed by three fully connected layers of size 128, 64 and 1 with keep prbability of 0.7, 0.7 and 1 respectively. Dropout is used to avoid overfitting.
+First, I crop the top part of images that have information not relevant to driving. Then I use three convoluted layers with 64, 96, and 128 filters respectively, and each of which is followed by a maximum pooling with keep probability of 0.8. The last conv2D layer is flattened and followed by three fully connected layers of size 128, 64 and 1 with keep prbability of 0.7, 0.7 and 1 respectively. Dropout is used to avoid overfitting.
 
 |               | input size    | kernel size | filters | keep probability |
 | ------------  |:-------------:|:-----------:|:-------:|:----------------:|
@@ -24,9 +24,12 @@ I use three convoluted layers with 64, 96, and 128 filters respectively, and eac
 
 
 #### Model Training
-The model is trained to predict the steering angle, loss function is MSE (Mean Squared Error) = sum (f_i - y_i)^2 / N, where N is number of samples and f_i is the estimation of y_i. I minimize MSE using AdamOptimizer with learning rate of 5e-5 in 150 epochs. The loss of training and validation  in 150 epochs.
+The model is trained to predict the steering angle, loss function is MSE (Mean Squared Error) = sum (f_i - y_i)^2 / N, where N is number of samples and f_i is the estimation of y_i. I minimize MSE using AdamOptimizer with learning rate of 5e-5 in 150 epochs. The loss of training and validation in 150 epochs. The car isdriven autonomously around the track by executing
+```
+python drive.py model.hdf5
+```
 
  Loss function             | Auto Driving
 :-------------------------:|:-------------------------:
-<img src="./images/loss.jpg" width="350"/> | <img src="./images/run1.gif" width="350"/>
+<img src="./images/loss.jpg" width="320"/> | <img src="./images/run1.gif" width="370"/>
 
