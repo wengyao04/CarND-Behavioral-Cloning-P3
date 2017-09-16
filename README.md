@@ -7,7 +7,7 @@ The cameras in the simulator capture images of 160 x 320 x 3. I drive car in bot
 <img src="./images/train_test_angle.jpg" width="520"/>
 
 There are three cameras on the vehicle, I use images taken by all of them, but correcting the steering agnle by 0.2 for image taken by left cameras and -0.2 for right cameras. I also randomly flip the images
-<img src="./images/image_flip.jpg" width="520"/>
+<img src="./images/image_flip.jpg" width="620"/>
 
 #### Model Architecture
 I use three convoluted layers with 64, 96, and 128 filters respectively, and each of which is followed by a maximum pooling with keep probability of 0.8. The last conv2D layer is flattened and followed by three fully connected layers of size 128, 64 and 1 with keep prbability of 0.7, 0.7 and 1 respectively. Dropout is used to avoid overfitting.
